@@ -1,0 +1,109 @@
+# Gitignore for SurveillAI-VAD project
+
+# Virtual environment
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data directories (large files)
+data/ucsd/
+data/avenue/
+data/shanghai/
+data/processed/
+data/test_labels/
+
+# Model checkpoints
+checkpoints/
+*.pth
+*.pt
+
+# Results and outputs
+results/
+*.csv
+*.png
+*.jpg
+*.jpeg
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+.DS_Store?
+*.swp
+*~
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.temp
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# Docker
+Dockerfile.dev
+docker-compose.override.yml
+
+# Distribution
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# API
+api/__pycache__/

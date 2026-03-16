@@ -1,0 +1,10 @@
+model: cnn
+dataset: ucsd_ped2
+window_size: 8
+stride: 4
+image_size: 224
+batch_size: 16
+epochs: 50
+lr: 1.0e-3
+latent_dim: 256
+device: cpu

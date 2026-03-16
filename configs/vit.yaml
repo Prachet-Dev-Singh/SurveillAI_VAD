@@ -1,0 +1,13 @@
+model: vit
+dataset: ucsd_ped2
+window_size: 8
+stride: 4
+image_size: 224
+batch_size: 16
+epochs: 100
+lr: 1.0e-4
+freeze_blocks: 8
+latent_dim: 256
+use_temporal: true
+use_distillation: false
+device: cpu
