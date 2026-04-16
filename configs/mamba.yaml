@@ -1,10 +1,13 @@
 model: mamba
+model_type: mamba
 dataset: ucsd_ped2
 window_size: 8
 stride: 4
 image_size: 224
 batch_size: 16
 epochs: 100
-lr: 1.0e-4
+learning_rate: 0.0002
 latent_dim: 256
-device: cpu
+num_slots: 512
+device: cuda
+data_dir: data/processed
