@@ -20,7 +20,7 @@ A research-grade implementation of unsupervised video anomaly detection for CCTV
 | CNN Autoencoder (baseline) | TBD | ~2M | TBD |
 | ViT-S + Temporal Attn | TBD | ~22M | TBD |
 | ViT-S + Temporal + Distillation | TBD | ~16M | TBD |
-| VideoMamba (MambaVision-T) | TBD | ~8M | TBD |
+| VideoMamba + Memory Bank | **88.61%** | ~25M | TBD |
 
 ## Installation
 
@@ -172,9 +172,15 @@ Output (3, 224, 224) [Sigmoid]
 
 ### VideoMamba Branch (Efficient Alternative)
 
-- **Backbone:** VideoMamba / MambaVision from HuggingFace
-- **O(n) complexity:** Handles long sequences efficiently vs O(n²) for Transformers
-- **Inference:** 2-4x faster than ViT at comparable AUC
+The MambaVision-T Memory-Augmented Autoencoder distinguishes structural and motion anomalies by identifying frames with high reconstruction error (using a combined MSE + SSIM loss).
+
+- **Performance:** **88.61% AUC-ROC** on UCSD Ped2
+- **Backbone:** MambaVision-T-1K (Frozen) for O(n) spatial complexity
+- **Temporal Network:** 2-layer GRU (Hidden Size: 512)
+- **Memory Bank:** 512 Slots with Soft Attention
+- **Decoder:** CNN Upsampling Decoder
+- **Latent Dimension:** 256
+- **Training:** AdamW, LR 2e-4, 100 Epochs
 
 ## Training Tips
 
